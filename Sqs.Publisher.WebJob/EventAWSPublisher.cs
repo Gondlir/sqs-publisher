@@ -17,7 +17,7 @@ namespace Sqs.Publisher.WebJob
             _customerMessage = new CustomerCreatedMessage 
             {
                 Id = Guid.NewGuid(),    
-                Name = "Kaoê Ferreira",
+                Name = "Kaoe Ferreira",
                 Email = "batman@dc.com",
                 GitHubUserName = "Gondlir"
             };
@@ -50,7 +50,7 @@ namespace Sqs.Publisher.WebJob
                     }
                 };
                 var response = await _awsClient.SendMessageAsync(sendMessageRequest);
-                Console.WriteLine("Mensagem enviada");
+                Console.WriteLine("Mensagem enviada!");
             }
             catch (Exception ex)
             {
