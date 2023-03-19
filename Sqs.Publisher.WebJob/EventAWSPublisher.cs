@@ -22,6 +22,7 @@ namespace Sqs.Publisher.WebJob
                 GitHubUserName = "Gondlir"
             };
             #endregion
+            Console.WriteLine("Iniciando !");
             var queueUrlReponse = await _awsClient.GetQueueUrlAsync(_url);
 
             await SendCustomerQueueMessageAsync(_customerMessage, queueUrlReponse);
@@ -32,6 +33,7 @@ namespace Sqs.Publisher.WebJob
         {
             try
             {
+                Console.WriteLine("Enviando mensagem !");
                 var sendMessageRequest = new SendMessageRequest
                 {
                     QueueUrl = queueUrlReponse.QueueUrl,
@@ -53,6 +55,7 @@ namespace Sqs.Publisher.WebJob
             catch (Exception ex)
             {
                 // Log Errors
+                Console.WriteLine("Houve algum erro !");
                 throw;
             }
         }
